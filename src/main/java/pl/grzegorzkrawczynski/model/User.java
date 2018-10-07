@@ -50,6 +50,16 @@ public class User {
         this.username = username;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
     public void save(Connection connection) throws SQLException{
         if(id == 0){
             insert(connection);
@@ -122,15 +132,5 @@ public class User {
         User[] usersArray = new User[users.size()];
         usersArray = users.toArray(usersArray);
         return usersArray;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                '}';
     }
 }
