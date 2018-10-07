@@ -13,9 +13,8 @@ final class Sql {
     private String createExercisesTable = "" +
             "CREATE TABLE exercise (\n" +
             "  id INT AUTO_INCREMENT PRIMARY KEY,\n" +
-            "  username VARCHAR(255) NOT NULL,\n" +
-            "  email VARCHAR(255) NOT NULL UNIQUE,\n" +
-            "  password VARCHAR(255) NOT NULL\n" +
+            "  title VARCHAR(255) NOT NULL,\n" +
+            "  description TEXT NOT NULL\n" +
             ");";
 
     private String createSolutionsTable = "" +
