@@ -20,11 +20,11 @@ final class Sql {
     private String createSolutionsTable = "" +
             "CREATE TABLE solution (\n" +
             "  id INT AUTO_INCREMENT PRIMARY KEY,\n" +
-            "  users_id INT,\n" +
+            "  users_id INT(20),\n" +
             "  exercise_id INT(11),\n" +
-            "  username VARCHAR(255) NOT NULL,\n" +
-            "  email VARCHAR(255) NOT NULL UNIQUE,\n" +
-            "  password VARCHAR(255) NOT NULL,\n" +
+            "  created DATETIME,\n" +
+            "  updated DATETIME,\n" +
+            "  description TEXT NOT NULL,\n" +
             "  FOREIGN KEY (users_id) REFERENCES users(id),\n" +
             "  FOREIGN KEY (exercise_id) REFERENCES exercise(id)\n" +
             ");";
