@@ -20,7 +20,7 @@ public class Boot {
             user.setPassword("admin" + new Random().nextInt());
             System.out.println(user);
 
-            User anna = new User("anna", "anna" + new Random().nextInt() +"@gamil.com ", "87654321");
+            User anna = new User("anna", "anna" + new Random().nextInt() +"@gamil.com ", "87654321", 1);
             anna.save(connection);
             System.out.println(anna);
         } catch (SQLException e) {

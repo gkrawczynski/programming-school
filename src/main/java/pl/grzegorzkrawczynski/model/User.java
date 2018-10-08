@@ -13,15 +13,15 @@ public class User {
     private String password;
     private int user_group_id;
 
-    private User() {
+    public User() {
 
     }
 
-    public User(int id, String username, String email, String password, int user_group_id) {
+    public User(String username, String email, String password, int user_group_id) {
         this.id = id;
         this.username = username;
         this.email = email;
-        this.password = password;
+        setPassword(password);
         this.user_group_id = user_group_id;
     }
 
@@ -103,13 +103,13 @@ public class User {
         sql.executeUpdate();
     }
 
-    public void delete(Connection connection) throws SQLException{
-        if(this.id != 0){
+    public static void delete(Connection connection, int id) throws SQLException{
+        if(id != 0){
             String query = "DELETE FROM users WHERE id=?";
             PreparedStatement sql = connection.prepareStatement(query);
-            sql.setInt(1, this.id);
+            sql.setInt(1, id);
             sql.executeUpdate();
-            this.id = 0;
+            id = 0;
         }
     }
 
