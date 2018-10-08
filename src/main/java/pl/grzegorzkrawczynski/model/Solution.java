@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Solution {
@@ -120,13 +119,13 @@ public class Solution {
         sql.executeUpdate();
     }
 
-    public void delete(Connection connection) throws SQLException{
-        if(this.id != 0){
+    public static void delete(Connection connection, int id) throws SQLException{
+        if(id != 0){
             String query = "DELETE FROM solution WHERE id=?";
             PreparedStatement sql = connection.prepareStatement(query);
-            sql.setInt(1, this.id);
+            sql.setInt(1, id);
             sql.executeUpdate();
-            this.id = 0;
+            id = 0;
         }
     }
 
