@@ -18,7 +18,6 @@ public class User {
     }
 
     public User(String username, String email, String password, int user_group_id) {
-        this.id = id;
         this.username = username;
         this.email = email;
         setPassword(password);

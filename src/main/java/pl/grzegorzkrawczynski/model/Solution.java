@@ -17,8 +17,7 @@ public class Solution {
     public Solution() {
     }
 
-    public Solution(int id, String created, String updated, String description, int users_id, int exercise_id) {
-        this.id = id;
+    public Solution(String created, String updated, String description, int users_id, int exercise_id) {
         this.created = created;
         this.updated = updated;
         this.description = description;

@@ -13,7 +13,7 @@ public class UserGroup {
     public UserGroup() {
     }
 
-    public UserGroup(int id, String name, int user_group_id) {
+    public UserGroup(int id, String name) {
         this.id = id;
         this.name = name;
     }
