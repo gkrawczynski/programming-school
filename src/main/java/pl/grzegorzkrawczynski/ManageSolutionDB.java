@@ -52,10 +52,16 @@ public class ManageSolutionDB {
                         solution.save(connection);
                         break;
 
-                    case "delete":
+                    case "view":
                         System.out.println("Id?");
                         int id = Integer.parseInt(sc.nextLine());
-                        Solution.delete(connection, id);
+                        Solution.loadAllByUserId(connection, id);
+                        break;
+
+                    case "delete":
+                        System.out.println("Id?");
+                        int id2 = Integer.parseInt(sc.nextLine());
+                        Solution.delete(connection, id2);
                         break;
 
                     case "quit":
